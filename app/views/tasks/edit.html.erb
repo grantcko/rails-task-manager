@@ -7,3 +7,4 @@
   <%= f.submit %>
 <% end %>
 <%= render 'display_task', task: @task %>
+<p><%= link_to "Delete", destroy_task_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>

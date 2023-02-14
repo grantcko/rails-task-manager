@@ -1,5 +1,12 @@
 <ol>
   <% tasks.each do |task|%>
-    <li><%= link_to(task.title, show_path(task)) %></li>
+    <li>
+      <div class="card w-50 p-3">
+        <div class="d-flex justify-content-between">
+          <%= link_to(task.title, task_path(task)) %>
+          <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
+    </li>
   <% end %>
 </ol>
